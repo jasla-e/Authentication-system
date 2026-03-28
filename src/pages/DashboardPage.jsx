@@ -4,12 +4,15 @@ export default function DashboardPage() {
   const { user, logout } = useAuth();
 
   return (
-    <div className="p-6">
-      <h1 className="text-2xl">Welcome {user?.fullName}</h1>
+    <div className="p-6 text-center flex flex-col items-center">
+      <h1 className="text-2xl mt-3">Welcome {user?.fullName}</h1>
 
-      <img src={user?.avatar} className="w-24 h-24 rounded-full mt-4" />
+    <img
+  src={user?.avatar || "https://i.pravatar.cc/150"}
+  className="w-50 h-50 mt-15 rounded-full "
+  />
 
-      <p>Email: {user?.email}</p>
+      <p className="mt-9">Email: {user?.email}</p>
       <p>Username: {user?.username}</p>
 
       <button

@@ -24,16 +24,21 @@ export const AuthProvider=({children})=>{
 
     const register=async (data)=>{
         setIsLoading(true);
-        const res=await api.checkUsername(data.username);
+    const res = await api.checkUsername();
 
-        if(res.data.length>0){
-            throw new Error ("Username already exists")
-            
-        }
-        const newUser = {
-      ...data,
-      createdAt: new Date().toISOString(),
-    };
+const exists = res.data.find(
+  (user) => user.username === data.username
+);
+
+if (exists) {
+  throw new Error("Username already exists");
+}
+
+const newUser = {
+  ...data,
+  avatar: data.avatar || "https://i.pravatar.cc/150", // fallback
+  createdAt: new Date().toISOString(),
+};
 
     await api.registerUser(newUser);
     setIsLoading(false);
