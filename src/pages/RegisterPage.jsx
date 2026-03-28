@@ -42,14 +42,14 @@ export default function RegisterPage() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="p-6 shadow w-96 mx-auto mt-20 bg-gray-100">
+    <form onSubmit={handleSubmit} className="p-6 shadow w-96 mx-auto mt-20 bg-gray-100 dark:bg-gray-100">
       <h2 className="text-xl mb-4 text-black dark:text-black">Register</h2>
 
       <input placeholder="username"
       className="border p-2 w-full rounded 
              placeholder:text-gray-400 
              dark:placeholder:text-gray-500 
-             bg-white dark:bg-gray-800 border-black"
+             bg-white dark:bg-white border-black"
       onChange={(e) => setData({ ...data, username: e.target.value })} />
       <p className="text-red-500">{errors.username}</p>
        
@@ -57,7 +57,7 @@ export default function RegisterPage() {
         className="border p-2 w-full rounded mt-2
              placeholder:text-gray-400 
              dark:placeholder:text-gray-500 
-             bg-white dark:bg-gray-800  border-black"
+             bg-white dark:bg-white  border-black"
         onChange={(e) => setData({ ...data, fullName: e.target.value })} />
       <p className="text-red-500">{errors.fullName}</p>
        
@@ -67,7 +67,7 @@ export default function RegisterPage() {
       className="border p-2 w-full rounded mt-2
              placeholder:text-gray-400 
              dark:placeholder:text-gray-500 
-             bg-white dark:bg-gray-800  border-black"
+             bg-white dark:bg-white  border-black"
       onChange={(e) => setData({ ...data, email: e.target.value })} />
       <p className="text-red-500">{errors.email}</p>
 
@@ -79,7 +79,7 @@ export default function RegisterPage() {
     className="border p-2 w-full rounded mt-2
              placeholder:text-gray-400 
              dark:placeholder:text-gray-500 
-             bg-white dark:bg-gray-800  border-black"
+             bg-white dark:bg-white  border-black"
     onChange={(e) => setData({ ...data, password: e.target.value })}
   />
 

@@ -44,7 +44,7 @@ export default function LoginPage() {
     <input
     type={showPassword ? "text" : "password"}
     placeholder="Password"
-    className="border p-2 w-full mb-2 placeholder:text-gray-400 dark:placeholder:text-gray-500  text-bl border-black"
+    className="border p-2 w-full mb-2 placeholder:text-gray-400 dark:placeholder:text-gray-500  text-black border-black"
     onChange={(e) => setData({ ...data, password: e.target.value })}
    />
 
