@@ -31,11 +31,11 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen flex justify-center items-center">
       <form onSubmit={handleSubmit} className="p-8 shadow-lg rounded-lg w-[420px] bg-gray-100">
-        <h2 className="text-xl mb-4 text-black">Login</h2>
+        <h2 className="text-xl mb-4 text-black ">Login</h2>
 
         <input
           placeholder="Email"
-          className="border p-2 w-full mb-2 placeholder:text-gray-400 dark:placeholder:text-gray-500 border-black"
+          className="border p-2 w-full mb-2 placeholder:text-gray-400 dark:placeholder:text-gray-500 text-black border-black"
           onChange={(e) => setData({ ...data, email: e.target.value })}
         />
         <p className="text-red-500">{errors.email}</p>
@@ -44,7 +44,7 @@ export default function LoginPage() {
     <input
     type={showPassword ? "text" : "password"}
     placeholder="Password"
-    className="border p-2 w-full mb-2 placeholder:text-gray-400 dark:placeholder:text-gray-500  border-black"
+    className="border p-2 w-full mb-2 placeholder:text-gray-400 dark:placeholder:text-gray-500  text-bl border-black"
     onChange={(e) => setData({ ...data, password: e.target.value })}
    />
 
