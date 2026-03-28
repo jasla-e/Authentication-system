@@ -12,14 +12,19 @@ export default function RegisterPage() {
   const [errors, setErrors] = useState({});
   const [showPassword, setShowPassword] = useState(false);
 
-   const handleImage = (e) => {
+const handleImage = (e) => {
   const file = e.target.files[0];
   if (!file) return;
 
-  const reader = new FileReader();
+  // 🚫 limit size (1MB)
+  if (file.size > 1000000) {
+    alert("Image too large (max 1MB)");
+    return;
+  }
 
+  const reader = new FileReader();
   reader.onloadend = () => {
-    setData({ ...data, avatar: reader.result }); // base64 image
+    setData({ ...data, avatar: reader.result });
   };
 
   reader.readAsDataURL(file);
